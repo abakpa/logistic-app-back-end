@@ -30,7 +30,7 @@ app.use('/', routes);
 
 const io = new Server(server,{
     cors:{
-        origin: ['http://localhost:3000','http://localhost:3001'],
+        origin: ['http://localhost:https://logistic-app-backoffice-es2p.vercel.app/','http://localhost:https://logistic-app-front-end-hxqg.vercel.app/'],
         methods:['GET','POST','PUT']
     }
 })
