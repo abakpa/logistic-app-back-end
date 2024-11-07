@@ -12,10 +12,7 @@ const port = process.env.PORT || 4000;
 
 const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/logistic-business-app'
 
-mongoose.connect(mongoURI,{
-    useNewUrlParser:true,
-    useUnifiedTopology:true,
-}).then(()=>console.log('MongoDb connected')).catch(err=>console.log(err))
+mongoose.connect(mongoURI).then(()=>console.log('MongoDb connected')).catch(err=>console.log(err))
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

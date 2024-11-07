@@ -5,7 +5,7 @@ const Order = require ('../../Orders/Model/index')
 const axios = require('axios');
 const { updateOrderPaymentStatus } = require('../../Orders/Services');
 
-// const PAYSTACK_SECRET_KEY ='sk_test_5df6a8647d7f18662fdb04725592229a3412056d';
+const PAYSTACK_SECRET_KEY ='sk_test_5df6a8647d7f18662fdb04725592229a3412056d';
 
 const createOrderPayment = async (data) => {
 
@@ -20,7 +20,7 @@ const createOrderPayment = async (data) => {
         },
         {
           headers: {
-            Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
+            Authorization: `Bearer ${PAYSTACK_SECRET_KEY}`,
           },
         }
       );
@@ -39,7 +39,7 @@ const getPaymentVerification = async (reference,id)=>{
         `https://api.paystack.co/transaction/verify/${reference}`,
         {
           headers: {
-            Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
+            Authorization: `Bearer ${PAYSTACK_SECRET_KEY}`,
           },
         }
       );
